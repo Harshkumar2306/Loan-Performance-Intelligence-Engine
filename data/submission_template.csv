@@ -1,0 +1,1 @@
+loan_id,next_3m_delinquency_prob,next_6m_delinquency_prob,next_12m_default_prob,next_12m_prepayment_prob,next_state,next_state_confidence,exception_type,exception_type_confidence,anomaly_score,anomaly_reason,top_drivers,recommended_action,confidence

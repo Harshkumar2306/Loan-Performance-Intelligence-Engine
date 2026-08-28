@@ -1,0 +1,63 @@
+seed: 2026
+paths:
+  data_dir: data
+  output_dir: outputs
+  train: loan_monthly_performance_train.csv
+  test: loan_monthly_performance_test.csv
+  static: loan_static_attributes.csv
+  updates: servicer_updates.csv
+  dictionary: data_dictionary.md
+  rules: validation_rules.json
+  scenarios: macro_scenarios.csv
+  template: submission_template.csv
+split:
+  validation_months: 6
+  time_column: reporting_month
+  loan_id: loan_id
+models:
+  calibration_cv: 3
+  max_iter: 160
+  max_leaf_nodes: 24
+  min_samples_leaf: 40
+  operating_precision: 0.6
+  calibration_bins: 10
+  bootstrap_samples: 400
+  # Number of deterministic loan-disjoint partitions in the evaluation audit.
+  audit_splits: 5
+  # ECE broken down by segment (brief: "Model calibration by vintage or credit band").
+  segment_calibration: [credit_score_band, vintage_year, state]
+  # Optional LightGBM candidate (skipped gracefully when the library is absent).
+  lgbm_estimators: 200
+  lgbm_learning_rate: 0.05
+  lgbm_num_leaves: 31
+survival:
+  horizon: 24
+review:
+  anomaly_queue_size: 50
+  reconcile_threshold: 0.45
+  escalate_threshold: 0.72
+  precision_target: 0.60
+scenarios:
+  segment_columns: [credit_score_band, state, servicer_name, vintage_year]
+  mc_sims: 30
+  mc_sample: 300
+explainability:
+  local_rows: 25
+  shap_background: 150
+  counterfactual_rows: 20
+tracking:
+  # Always-on JSONL runs log; W&B only when enabled AND installed AND authenticated.
+  # (brief: "MLflow or Weights & Biases experiment tracking")
+  enabled: false
+  provider: wandb
+  project: lpi-engine
+  entity: null
+  name: null
+llm:
+  # 'auto' = use the LLM when OPENAI_API_KEY + base_url are available; grounded template otherwise.
+  # 'template' = fully offline grounded note. 'openai_compatible' = always attempt the call.
+  provider: auto
+  base_url: "https://api.groq.com/openai/v1"
+  api_key_env: OPENAI_API_KEY
+  model: qwen/qwen3.8-27b
+  temperature: 0.2

@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lp-intelligence-engine"
+version = "0.1.0"
+description = "ML-first loan performance intelligence for the Intain challenge"
+requires-python = ">=3.9"
+dependencies = ["pandas>=2.1", "numpy>=1.26", "scikit-learn>=1.4", "scipy>=1.11", "pyyaml>=6.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+# Optional: TreeSHAP local explanations. The pipeline falls back to a labelled
+# deviation-based heuristic when shap is not installed.
+explain = ["shap>=0.44"]
+# Optional: third boosting family for model-comparison evidence. The pipeline
+# reports "lgbm not installed (optional dependency)" when absent — never a hard dependency.
+gbm = ["lightgbm>=4.0"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

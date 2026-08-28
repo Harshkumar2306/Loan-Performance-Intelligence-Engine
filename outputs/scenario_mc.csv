@@ -1,0 +1,4 @@
+scenario,mean_default_rate,p05_default_rate,p95_default_rate,mean_prepayment_rate,p05_prepayment_rate,p95_prepayment_rate,simulations
+Base,0.08326,0.06368,0.10574,0.24338,0.21985,0.26954,30
+Adverse Credit,0.08963,0.07246,0.10841,0.20225,0.18661,0.22439,30
+High Prepayment,0.08314,0.06516,0.10564,0.30459,0.2744,0.33672,30
