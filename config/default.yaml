@@ -11,7 +11,7 @@ paths:
   scenarios: macro_scenarios.csv
   template: submission_template.csv
 split:
-  validation_months: 18
+  validation_months: 6
   time_column: reporting_month
   loan_id: loan_id
 models:

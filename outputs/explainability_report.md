@@ -6,78 +6,75 @@
 
 | Target | Feature | Importance ± std |
 |---|---|---|
-| exception_required | document_status | 0.149186 ± 0.007761 |
-| exception_required | interest_rate | 0.055926 ± 0.003887 |
-| exception_required | dti_numeric | 0.040781 ± 0.003636 |
-| exception_required | original_balance | 0.036172 ± 0.004851 |
-| exception_required | credit_score_numeric | 0.033217 ± 0.004361 |
-| exception_required | state | 0.027748 ± 0.00336 |
-| exception_required | current_balance | 0.02697 ± 0.002942 |
-| exception_required | loan_purpose | 0.019008 ± 0.007686 |
-| exception_required | ltv_numeric | 0.01124 ± 0.005879 |
-| exception_required | credit_score_band | 0.007402 ± 0.000101 |
-| exception_required | dti_band | 0.006327 ± 0.002205 |
-| exception_required | ever_dpd | 0.005751 ± 0.000911 |
-| exception_required | property_type | 0.004079 ± 0.001493 |
-| exception_required | occupancy_type | 0.003254 ± 0.000881 |
-| exception_required | balance_ratio | 0.003101 ± 0.00157 |
-| exception_required | servicer_name | 0.002137 ± 0.001194 |
-| exception_required | current_status | 0.001542 ± 0.000976 |
-| exception_required | days_past_due | 0.000669 ± 0.000356 |
-| exception_required | ltv_band | 0.000563 ± 0.001399 |
+| exception_required | document_status | 0.262401 ± 0.008047 |
+| exception_required | dti_numeric | 0.128406 ± 0.007408 |
+| exception_required | original_balance | 0.122827 ± 0.002541 |
+| exception_required | interest_rate | 0.079204 ± 0.00292 |
+| exception_required | current_balance | 0.073675 ± 0.004123 |
+| exception_required | ltv_numeric | 0.055117 ± 0.002499 |
+| exception_required | state | 0.034237 ± 0.004575 |
+| exception_required | loan_purpose | 0.025378 ± 0.004742 |
+| exception_required | credit_score_numeric | 0.024281 ± 0.000291 |
+| exception_required | remaining_term_months | 0.018424 ± 0.001819 |
+| exception_required | occupancy_type | 0.015921 ± 0.000687 |
+| exception_required | credit_score_band | 0.011896 ± 0.002012 |
+| exception_required | property_type | 0.011051 ± 0.001092 |
+| exception_required | servicer_name | 0.008648 ± 0.001062 |
+| exception_required | current_status | 0.00402 ± 0.003041 |
+| exception_required | dti_band | 0.003784 ± 0.000518 |
+| exception_required | balance_ratio | 0.003536 ± 0.002596 |
+| exception_required | ltv_band | 0.003015 ± 0.000683 |
+| exception_required | term_ratio | 0.000884 ± 0.000582 |
+| exception_required | loan_age_months | 0.000351 ± 0.001049 |
+| exception_required | days_past_due | 0.000314 ± 0.000432 |
 | exception_required | source_system | 0.0 ± 0.0 |
-| exception_required | dpd_velocity | 0.0 ± 0.0 |
 | exception_required | vintage_year | 0.0 ± 0.0 |
-| exception_required | paydown_rate | -0.0003 ± 0.00472 |
-| exception_required | loan_age_months | -0.000397 ± 0.000357 |
-| exception_required | term_ratio | -0.000864 ± 0.000474 |
-| exception_required | remaining_term_months | -0.002247 ± 0.007188 |
-| next_12m_default_flag | dti_numeric | 0.10874 ± 0.004694 |
-| next_12m_default_flag | credit_score_numeric | 0.066089 ± 0.016165 |
-| next_12m_default_flag | ltv_numeric | 0.065276 ± 0.010001 |
-| next_12m_default_flag | interest_rate | 0.063577 ± 0.015311 |
+| exception_required | ever_dpd | -0.000236 ± 0.000599 |
+| exception_required | dpd_velocity | -0.001883 ± 0.000385 |
+| exception_required | paydown_rate | -0.003 ± 0.000302 |
+| next_12m_default_flag | dti_numeric | 0.29681 ± 0.029768 |
+| next_12m_default_flag | interest_rate | 0.286287 ± 0.006825 |
+| next_12m_default_flag | original_balance | 0.261429 ± 0.005232 |
+| next_12m_default_flag | current_status | 0.198222 ± 0.014994 |
 
 ## Error analysis (false positives / false negatives, validation period)
 
 ### next_3m_delinquency_flag
 
-- False positives: 20 (rate 0.0019)
-- False negatives: 752 (rate 0.0707)
+- False positives: 0 (rate 0.0)
+- False negatives: 257 (rate 0.0701)
 - Threshold: 0.5
-- False Positives Segment Concentration: {"credit_score_band": {"<620": 0.0039, "740+": 0.0026, "680-739": 0.0015}, "state": {"WA": 0.0058, "CA": 0.0032, "TX": 0.0023}, "servicer_name": {"Atlas": 0.0027, "Beacon": 0.0026, "Cedar": 0.0003}, "ltv_band": {"81-100": 0.0026, "<=60": 0.0017, "61-80": 0.0017}}
-- False Negatives Segment Concentration: {"credit_score_band": {"<620": 0.0921, "620-679": 0.0895, "680-739": 0.0713}, "state": {"IL": 0.0986, "TX": 0.0912, "GA": 0.0701}, "servicer_name": {"Beacon": 0.0733, "Atlas": 0.0716, "Cedar": 0.0671}, "ltv_band": {"100+": 0.1198, "81-100": 0.078, "61-80": 0.0731}}
+- False Negatives Segment Concentration: {"credit_score_band": {"620-679": 0.1004, "<620": 0.0754, "680-739": 0.0676}, "state": {"TX": 0.1084, "IL": 0.0899, "WA": 0.0781}, "servicer_name": {"Atlas": 0.0834, "Beacon": 0.0676, "Cedar": 0.0609}, "ltv_band": {"100+": 0.1429, "81-100": 0.0849, "61-80": 0.0653}}
 
 ### next_6m_delinquency_flag
 
-- False positives: 176 (rate 0.0166)
-- False negatives: 1123 (rate 0.1056)
-- Threshold: 0.5
-- False Positives Segment Concentration: {"credit_score_band": {"<620": 0.023, "620-679": 0.017, "680-739": 0.0164}, "state": {"IL": 0.0567, "WA": 0.0161, "TX": 0.0131}, "servicer_name": {"Cedar": 0.021, "Atlas": 0.0149, "Beacon": 0.0138}, "ltv_band": {"81-100": 0.025, "<=60": 0.0166, "61-80": 0.0131}}
-- False Negatives Segment Concentration: {"credit_score_band": {"<620": 0.1444, "620-679": 0.1409, "680-739": 0.1029}, "state": {"TX": 0.1337, "IL": 0.1183, "WA": 0.113}, "servicer_name": {"Atlas": 0.1143, "Beacon": 0.1112, "Cedar": 0.0917}, "ltv_band": {"100+": 0.2107, "81-100": 0.1157, "61-80": 0.1067}}
+- False positives: 71 (rate 0.0194)
+- False negatives: 268 (rate 0.0731)
+- Threshold: 0.4366
+- False Positives Segment Concentration: {"credit_score_band": {"<620": 0.0285, "740+": 0.0211, "620-679": 0.0166}, "state": {"IL": 0.0414, "WA": 0.0223, "FL": 0.0189}, "servicer_name": {"Beacon": 0.021, "Atlas": 0.0199, "Cedar": 0.0171}, "ltv_band": {"61-80": 0.0261, "100+": 0.026, "81-100": 0.018}}
+- False Negatives Segment Concentration: {"credit_score_band": {"620-679": 0.1004, "680-739": 0.0805, "<620": 0.0804}, "state": {"WA": 0.0967, "TX": 0.0903, "CA": 0.0859}, "servicer_name": {"Atlas": 0.0943, "Beacon": 0.0661, "Cedar": 0.0617}, "ltv_band": {"81-100": 0.0892, "<=60": 0.0766, "100+": 0.0649}}
 
 ### next_12m_default_flag
 
-- False positives: 127 (rate 0.0119)
-- False negatives: 461 (rate 0.0434)
-- Threshold: 0.5
-- False Positives Segment Concentration: {"credit_score_band": {"<620": 0.0376, "620-679": 0.0196, "680-739": 0.0022}, "state": {"FL": 0.0185, "NY": 0.0172, "CA": 0.0171}, "servicer_name": {"Atlas": 0.0223, "Cedar": 0.0089, "Beacon": 0.0058}, "ltv_band": {"100+": 0.062, "81-100": 0.0254, "61-80": 0.0078}}
-- False Negatives Segment Concentration: {"credit_score_band": {"<620": 0.0753, "620-679": 0.0601, "680-739": 0.0404}, "state": {"IL": 0.0616, "WA": 0.0482, "TX": 0.0464}, "servicer_name": {"Atlas": 0.0491, "Beacon": 0.0418, "Cedar": 0.0397}, "ltv_band": {"61-80": 0.0468, "81-100": 0.0455, "100+": 0.0372}}
+- False positives: 38 (rate 0.0104)
+- False negatives: 0 (rate 0.0)
+- Threshold: 0.1864
+- False Positives Segment Concentration: {"credit_score_band": {"<620": 0.0218, "620-679": 0.0188, "680-739": 0.0043}, "state": {"FL": 0.0246, "NY": 0.0144, "TX": 0.009}, "servicer_name": {"Atlas": 0.0154, "Beacon": 0.0105, "Cedar": 0.0057}, "ltv_band": {"100+": 0.039, "81-100": 0.0127, "61-80": 0.0125}}
 
 ### next_12m_prepayment_flag
 
-- False positives: 695 (rate 0.0751)
-- False negatives: 1198 (rate 0.1295)
-- Threshold: 0.5
-- False Positives Segment Concentration: {"credit_score_band": {"740+": 0.1262, "680-739": 0.1083, "620-679": 0.0371}, "state": {"TX": 0.1746, "GA": 0.0747, "IL": 0.0733}, "servicer_name": {"Cedar": 0.0898, "Atlas": 0.0696, "Beacon": 0.0664}, "ltv_band": {"81-100": 0.093, "<=60": 0.0858, "61-80": 0.0637}}
-- False Negatives Segment Concentration: {"credit_score_band": {"740+": 0.1752, "680-739": 0.1194, "<620": 0.1169}, "state": {"GA": 0.1517, "IL": 0.1502, "WA": 0.1464}, "servicer_name": {"Cedar": 0.1404, "Beacon": 0.1311, "Atlas": 0.1163}, "ltv_band": {"61-80": 0.1355, "<=60": 0.1345, "81-100": 0.1159}}
+- False positives: 0 (rate 0.0)
+- False negatives: 200 (rate 0.0683)
+- Threshold: 0.8133
+- False Negatives Segment Concentration: {"credit_score_band": {"740+": 0.0988, "680-739": 0.0793, "<620": 0.0516}, "state": {"CA": 0.0977, "NY": 0.0767, "FL": 0.0654}, "servicer_name": {"Cedar": 0.0805, "Atlas": 0.067, "Beacon": 0.058}, "ltv_band": {"61-80": 0.0787, "81-100": 0.062, "<=60": 0.0558}}
 
 ### exception_required
 
-- False positives: 165 (rate 0.0149)
-- False negatives: 1221 (rate 0.1099)
-- Threshold: 0.4997
-- False Positives Segment Concentration: {"credit_score_band": {"620-679": 0.0224, "<620": 0.0202, "680-739": 0.0126}, "state": {"IL": 0.0315, "GA": 0.0241, "WA": 0.0195}, "servicer_name": {"Beacon": 0.0247, "Cedar": 0.01, "Atlas": 0.0087}, "ltv_band": {"61-80": 0.0205, "<=60": 0.0117, "81-100": 0.0074}}
-- False Negatives Segment Concentration: {"credit_score_band": {"740+": 0.1177, "<620": 0.1088, "680-739": 0.1073}, "state": {"CA": 0.1223, "NY": 0.1121, "FL": 0.1118}, "servicer_name": {"Cedar": 0.1186, "Atlas": 0.1145, "Beacon": 0.0979}, "ltv_band": {"<=60": 0.1242, "61-80": 0.11, "81-100": 0.1057}}
+- False positives: 30 (rate 0.0077)
+- False negatives: 398 (rate 0.1021)
+- Threshold: 0.7109
+- False Positives Segment Concentration: {"credit_score_band": {"<620": 0.0131, "620-679": 0.0102, "740+": 0.0056}, "state": {"WA": 0.0125, "IL": 0.01, "FL": 0.0087}, "servicer_name": {"Beacon": 0.0099, "Atlas": 0.0068, "Cedar": 0.0062}, "ltv_band": {"61-80": 0.0082, "81-100": 0.0078, "<=60": 0.0072}}
+- False Negatives Segment Concentration: {"credit_score_band": {"680-739": 0.1168, "740+": 0.1069, "620-679": 0.0942}, "state": {"FL": 0.125, "IL": 0.112, "CA": 0.1098}, "servicer_name": {"Atlas": 0.1117, "Cedar": 0.1062, "Beacon": 0.0902}, "ltv_band": {"<=60": 0.1178, "61-80": 0.1014, "81-100": 0.0971}}
 
 ## Local explanations
 
@@ -99,27 +96,27 @@ The formula is auditable in `explainability.model_confidence`.
 
 | Target | Segment | Value | n | Event rate | Predicted rate | FPR | FNR |
 |---|---|---|---|---|---|---|---|
-| next_12m_default_flag | credit_score_band | 620-679 | 2647 | 0.0782 | 0.0378 | 0.0196 | 0.0601 |
-| next_12m_default_flag | credit_score_band | 680-739 | 2750 | 0.0462 | 0.008 | 0.0022 | 0.0404 |
-| next_12m_default_flag | credit_score_band | 740+ | 3456 | 0.02 | 0.0041 | 0.0006 | 0.0165 |
-| next_12m_default_flag | credit_score_band | <620 | 1780 | 0.1 | 0.0624 | 0.0376 | 0.0753 |
-| next_12m_default_flag | state | CA | 1580 | 0.0468 | 0.0228 | 0.0171 | 0.0411 |
-| next_12m_default_flag | state | FL | 1511 | 0.0602 | 0.0324 | 0.0185 | 0.0463 |
-| next_12m_default_flag | state | GA | 1498 | 0.0447 | 0.014 | 0.0073 | 0.0381 |
-| next_12m_default_flag | state | IL | 1623 | 0.0795 | 0.0345 | 0.0166 | 0.0616 |
-| next_12m_default_flag | state | NY | 1570 | 0.0229 | 0.0185 | 0.0172 | 0.0217 |
-| next_12m_default_flag | state | TX | 1294 | 0.0719 | 0.0286 | 0.0031 | 0.0464 |
-| next_12m_default_flag | state | WA | 1557 | 0.0584 | 0.0122 | 0.0019 | 0.0482 |
-| next_3m_delinquency_flag | credit_score_band | 620-679 | 2647 | 0.0895 | 0.0 | 0.0 | 0.0895 |
-| next_3m_delinquency_flag | credit_score_band | 680-739 | 2750 | 0.0713 | 0.0015 | 0.0015 | 0.0713 |
-| next_3m_delinquency_flag | credit_score_band | 740+ | 3456 | 0.0451 | 0.0029 | 0.0026 | 0.0448 |
-| next_3m_delinquency_flag | credit_score_band | <620 | 1780 | 0.0921 | 0.0039 | 0.0039 | 0.0921 |
-| next_3m_delinquency_flag | state | CA | 1580 | 0.069 | 0.0032 | 0.0032 | 0.069 |
-| next_3m_delinquency_flag | state | FL | 1511 | 0.0609 | 0.002 | 0.002 | 0.0609 |
-| next_3m_delinquency_flag | state | GA | 1498 | 0.0701 | 0.0 | 0.0 | 0.0701 |
-| next_3m_delinquency_flag | state | IL | 1623 | 0.0986 | 0.0 | 0.0 | 0.0986 |
-| next_3m_delinquency_flag | state | NY | 1570 | 0.0382 | 0.0 | 0.0 | 0.0382 |
-| next_3m_delinquency_flag | state | TX | 1294 | 0.092 | 0.0031 | 0.0023 | 0.0912 |
-| next_3m_delinquency_flag | state | WA | 1557 | 0.0694 | 0.0058 | 0.0058 | 0.0694 |
+| next_12m_default_flag | credit_score_band | 620-679 | 906 | 0.0673 | 0.0861 | 0.0188 | 0.0 |
+| next_12m_default_flag | credit_score_band | 680-739 | 932 | 0.03 | 0.0343 | 0.0043 | 0.0 |
+| next_12m_default_flag | credit_score_band | 740+ | 1231 | 0.0187 | 0.0219 | 0.0032 | 0.0 |
+| next_12m_default_flag | credit_score_band | <620 | 597 | 0.057 | 0.0787 | 0.0218 | 0.0 |
+| next_12m_default_flag | state | CA | 547 | 0.0402 | 0.0475 | 0.0073 | 0.0 |
+| next_12m_default_flag | state | FL | 529 | 0.0302 | 0.0548 | 0.0246 | 0.0 |
+| next_12m_default_flag | state | GA | 499 | 0.024 | 0.0321 | 0.008 | 0.0 |
+| next_12m_default_flag | state | IL | 556 | 0.0683 | 0.0719 | 0.0036 | 0.0 |
+| next_12m_default_flag | state | NY | 554 | 0.0108 | 0.0253 | 0.0144 | 0.0 |
+| next_12m_default_flag | state | TX | 443 | 0.0474 | 0.0564 | 0.009 | 0.0 |
+| next_12m_default_flag | state | WA | 538 | 0.0576 | 0.0632 | 0.0056 | 0.0 |
+| next_3m_delinquency_flag | credit_score_band | 620-679 | 906 | 0.1004 | 0.0 | 0.0 | 0.1004 |
+| next_3m_delinquency_flag | credit_score_band | 680-739 | 932 | 0.0676 | 0.0 | 0.0 | 0.0676 |
+| next_3m_delinquency_flag | credit_score_band | 740+ | 1231 | 0.0471 | 0.0 | 0.0 | 0.0471 |
+| next_3m_delinquency_flag | credit_score_band | <620 | 597 | 0.0754 | 0.0 | 0.0 | 0.0754 |
+| next_3m_delinquency_flag | state | CA | 547 | 0.075 | 0.0 | 0.0 | 0.075 |
+| next_3m_delinquency_flag | state | FL | 529 | 0.0586 | 0.0 | 0.0 | 0.0586 |
+| next_3m_delinquency_flag | state | GA | 499 | 0.0601 | 0.0 | 0.0 | 0.0601 |
+| next_3m_delinquency_flag | state | IL | 556 | 0.0899 | 0.0 | 0.0 | 0.0899 |
+| next_3m_delinquency_flag | state | NY | 554 | 0.0271 | 0.0 | 0.0 | 0.0271 |
+| next_3m_delinquency_flag | state | TX | 443 | 0.1084 | 0.0 | 0.0 | 0.1084 |
+| next_3m_delinquency_flag | state | WA | 538 | 0.0781 | 0.0 | 0.0 | 0.0781 |
 
 *Descriptive parity monitoring only; full bias/fairness review is a documented pre-production gate (see the model card).*
