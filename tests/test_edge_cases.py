@@ -2,7 +2,11 @@
 operating points, schema gates, LLM fallback honesty, scenario prepayment impact, security
 hygiene, and a full end-to-end pipeline run on a tiny synthetic pack."""
 import json
+import sys
 from pathlib import Path
+
+# Add repository root to python path for IDE test discovery of the `scripts` module
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 import numpy as np
 import pandas as pd
