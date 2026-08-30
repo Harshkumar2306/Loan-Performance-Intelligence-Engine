@@ -81,14 +81,6 @@ header {
   background: rgba(56, 189, 248, 0.15);
   border-color: rgba(56, 189, 248, 0.35);
 }
-.header-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-  flex-wrap: wrap;
-  gap: 12px;
-}
 .brand-badge {
   display: inline-flex;
   align-items: center;
@@ -899,14 +891,14 @@ def render(payload: dict) -> str:
 <style>{_CSS}</style></head>
 <body>
 <header>
-  <div class="header-top">
+  <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:6px;">
+    <h1 style="margin:0;">Loan Performance Intelligence Engine — Production Dashboard</h1>
     <div class="meta">
       <span>Cutoff: <strong>{meta.get('cutoff', 'n/a')}</strong></span>
       <span>Features: <strong>{meta.get('n_features', 'n/a')}</strong></span>
       <span>Seed: <strong>{meta.get('seed', 'n/a')}</strong></span>
     </div>
   </div>
-  <h1>Loan Performance Intelligence Engine — Production Dashboard</h1>
   <nav class="sub-nav">
     <a href="#overview" class="nav-item">Overview</a>
     <a href="#task-1" class="nav-item">Data Quality</a>
