@@ -2,202 +2,271 @@
   "next_3m_delinquency_flag": {
     "target": "next_3m_delinquency_flag",
     "threshold": 0.5,
-    "n_false_positives": 0,
-    "n_false_negatives": 257,
-    "fp_rate_at_threshold": 0.0,
-    "fn_rate_at_threshold": 0.0701,
-    "false_negatives_segment_concentration": {
+    "n_false_positives": 20,
+    "n_false_negatives": 752,
+    "fp_rate_at_threshold": 0.0019,
+    "fn_rate_at_threshold": 0.0707,
+    "false_positives_segment_concentration": {
       "credit_score_band": {
-        "620-679": 0.1004,
-        "<620": 0.0754,
-        "680-739": 0.0676
+        "<620": 0.0039,
+        "740+": 0.0026,
+        "680-739": 0.0015
       },
       "state": {
-        "TX": 0.1084,
-        "IL": 0.0899,
-        "WA": 0.0781
+        "WA": 0.0058,
+        "CA": 0.0032,
+        "TX": 0.0023
       },
       "servicer_name": {
-        "Atlas": 0.0834,
-        "Beacon": 0.0676,
-        "Cedar": 0.0609
+        "Atlas": 0.0027,
+        "Beacon": 0.0026,
+        "Cedar": 0.0003
       },
       "ltv_band": {
-        "100+": 0.1429,
-        "81-100": 0.0849,
-        "61-80": 0.0653
+        "81-100": 0.0026,
+        "<=60": 0.0017,
+        "61-80": 0.0017
       }
     },
-    "false_negatives_mean_quality": 84.19
+    "false_positives_mean_quality": 81.4,
+    "false_negatives_segment_concentration": {
+      "credit_score_band": {
+        "<620": 0.0921,
+        "620-679": 0.0895,
+        "680-739": 0.0713
+      },
+      "state": {
+        "IL": 0.0986,
+        "TX": 0.0912,
+        "GA": 0.0701
+      },
+      "servicer_name": {
+        "Beacon": 0.0733,
+        "Atlas": 0.0716,
+        "Cedar": 0.0671
+      },
+      "ltv_band": {
+        "100+": 0.1198,
+        "81-100": 0.078,
+        "61-80": 0.0731
+      }
+    },
+    "false_negatives_mean_quality": 84.44
   },
   "next_6m_delinquency_flag": {
     "target": "next_6m_delinquency_flag",
-    "threshold": 0.4366,
-    "n_false_positives": 71,
-    "n_false_negatives": 268,
-    "fp_rate_at_threshold": 0.0194,
-    "fn_rate_at_threshold": 0.0731,
+    "threshold": 0.5,
+    "n_false_positives": 176,
+    "n_false_negatives": 1123,
+    "fp_rate_at_threshold": 0.0166,
+    "fn_rate_at_threshold": 0.1056,
     "false_positives_segment_concentration": {
       "credit_score_band": {
-        "<620": 0.0285,
-        "740+": 0.0211,
-        "620-679": 0.0166
+        "<620": 0.023,
+        "620-679": 0.017,
+        "680-739": 0.0164
       },
       "state": {
-        "IL": 0.0414,
-        "WA": 0.0223,
-        "FL": 0.0189
+        "IL": 0.0567,
+        "WA": 0.0161,
+        "TX": 0.0131
       },
       "servicer_name": {
-        "Beacon": 0.021,
-        "Atlas": 0.0199,
-        "Cedar": 0.0171
+        "Cedar": 0.021,
+        "Atlas": 0.0149,
+        "Beacon": 0.0138
       },
       "ltv_band": {
-        "61-80": 0.0261,
-        "100+": 0.026,
-        "81-100": 0.018
+        "81-100": 0.025,
+        "<=60": 0.0166,
+        "61-80": 0.0131
       }
     },
-    "false_positives_mean_quality": 83.3,
+    "false_positives_mean_quality": 83.95,
     "false_negatives_segment_concentration": {
       "credit_score_band": {
-        "620-679": 0.1004,
-        "680-739": 0.0805,
-        "<620": 0.0804
+        "<620": 0.1444,
+        "620-679": 0.1409,
+        "680-739": 0.1029
       },
       "state": {
-        "WA": 0.0967,
-        "TX": 0.0903,
-        "CA": 0.0859
+        "TX": 0.1337,
+        "IL": 0.1183,
+        "WA": 0.113
       },
       "servicer_name": {
-        "Atlas": 0.0943,
-        "Beacon": 0.0661,
-        "Cedar": 0.0617
+        "Atlas": 0.1143,
+        "Beacon": 0.1112,
+        "Cedar": 0.0917
       },
       "ltv_band": {
-        "81-100": 0.0892,
-        "<=60": 0.0766,
-        "100+": 0.0649
+        "100+": 0.2107,
+        "81-100": 0.1157,
+        "61-80": 0.1067
       }
     },
-    "false_negatives_mean_quality": 85.63
+    "false_negatives_mean_quality": 84.85
   },
   "next_12m_default_flag": {
     "target": "next_12m_default_flag",
-    "threshold": 0.1864,
-    "n_false_positives": 38,
-    "n_false_negatives": 0,
-    "fp_rate_at_threshold": 0.0104,
-    "fn_rate_at_threshold": 0.0,
+    "threshold": 0.5,
+    "n_false_positives": 127,
+    "n_false_negatives": 461,
+    "fp_rate_at_threshold": 0.0119,
+    "fn_rate_at_threshold": 0.0434,
     "false_positives_segment_concentration": {
       "credit_score_band": {
-        "<620": 0.0218,
-        "620-679": 0.0188,
-        "680-739": 0.0043
+        "<620": 0.0376,
+        "620-679": 0.0196,
+        "680-739": 0.0022
       },
       "state": {
-        "FL": 0.0246,
-        "NY": 0.0144,
-        "TX": 0.009
+        "FL": 0.0185,
+        "NY": 0.0172,
+        "CA": 0.0171
       },
       "servicer_name": {
-        "Atlas": 0.0154,
-        "Beacon": 0.0105,
-        "Cedar": 0.0057
+        "Atlas": 0.0223,
+        "Cedar": 0.0089,
+        "Beacon": 0.0058
       },
       "ltv_band": {
-        "100+": 0.039,
-        "81-100": 0.0127,
-        "61-80": 0.0125
+        "100+": 0.062,
+        "81-100": 0.0254,
+        "61-80": 0.0078
       }
     },
-    "false_positives_mean_quality": 82.11
+    "false_positives_mean_quality": 84.2,
+    "false_negatives_segment_concentration": {
+      "credit_score_band": {
+        "<620": 0.0753,
+        "620-679": 0.0601,
+        "680-739": 0.0404
+      },
+      "state": {
+        "IL": 0.0616,
+        "WA": 0.0482,
+        "TX": 0.0464
+      },
+      "servicer_name": {
+        "Atlas": 0.0491,
+        "Beacon": 0.0418,
+        "Cedar": 0.0397
+      },
+      "ltv_band": {
+        "61-80": 0.0468,
+        "81-100": 0.0455,
+        "100+": 0.0372
+      }
+    },
+    "false_negatives_mean_quality": 84.01
   },
   "next_12m_prepayment_flag": {
     "target": "next_12m_prepayment_flag",
-    "threshold": 0.8133,
-    "n_false_positives": 0,
-    "n_false_negatives": 200,
-    "fp_rate_at_threshold": 0.0,
-    "fn_rate_at_threshold": 0.0683,
-    "false_negatives_segment_concentration": {
+    "threshold": 0.5,
+    "n_false_positives": 695,
+    "n_false_negatives": 1198,
+    "fp_rate_at_threshold": 0.0751,
+    "fn_rate_at_threshold": 0.1295,
+    "false_positives_segment_concentration": {
       "credit_score_band": {
-        "740+": 0.0988,
-        "680-739": 0.0793,
-        "<620": 0.0516
+        "740+": 0.1262,
+        "680-739": 0.1083,
+        "620-679": 0.0371
       },
       "state": {
-        "CA": 0.0977,
-        "NY": 0.0767,
-        "FL": 0.0654
+        "TX": 0.1746,
+        "GA": 0.0747,
+        "IL": 0.0733
       },
       "servicer_name": {
-        "Cedar": 0.0805,
-        "Atlas": 0.067,
-        "Beacon": 0.058
+        "Cedar": 0.0898,
+        "Atlas": 0.0696,
+        "Beacon": 0.0664
       },
       "ltv_band": {
-        "61-80": 0.0787,
-        "81-100": 0.062,
-        "<=60": 0.0558
+        "81-100": 0.093,
+        "<=60": 0.0858,
+        "61-80": 0.0637
       }
     },
-    "false_negatives_mean_quality": 84.63
+    "false_positives_mean_quality": 84.97,
+    "false_negatives_segment_concentration": {
+      "credit_score_band": {
+        "740+": 0.1752,
+        "680-739": 0.1194,
+        "<620": 0.1169
+      },
+      "state": {
+        "GA": 0.1517,
+        "IL": 0.1502,
+        "WA": 0.1464
+      },
+      "servicer_name": {
+        "Cedar": 0.1404,
+        "Beacon": 0.1311,
+        "Atlas": 0.1163
+      },
+      "ltv_band": {
+        "61-80": 0.1355,
+        "<=60": 0.1345,
+        "81-100": 0.1159
+      }
+    },
+    "false_negatives_mean_quality": 85.37
   },
   "exception_required": {
     "target": "exception_required",
-    "threshold": 0.7109,
-    "n_false_positives": 30,
-    "n_false_negatives": 398,
-    "fp_rate_at_threshold": 0.0077,
-    "fn_rate_at_threshold": 0.1021,
+    "threshold": 0.4997,
+    "n_false_positives": 165,
+    "n_false_negatives": 1221,
+    "fp_rate_at_threshold": 0.0149,
+    "fn_rate_at_threshold": 0.1099,
     "false_positives_segment_concentration": {
       "credit_score_band": {
-        "<620": 0.0131,
-        "620-679": 0.0102,
-        "740+": 0.0056
+        "620-679": 0.0224,
+        "<620": 0.0202,
+        "680-739": 0.0126
       },
       "state": {
-        "WA": 0.0125,
-        "IL": 0.01,
-        "FL": 0.0087
+        "IL": 0.0315,
+        "GA": 0.0241,
+        "WA": 0.0195
       },
       "servicer_name": {
-        "Beacon": 0.0099,
-        "Atlas": 0.0068,
-        "Cedar": 0.0062
+        "Beacon": 0.0247,
+        "Cedar": 0.01,
+        "Atlas": 0.0087
       },
       "ltv_band": {
-        "61-80": 0.0082,
-        "81-100": 0.0078,
-        "<=60": 0.0072
+        "61-80": 0.0205,
+        "<=60": 0.0117,
+        "81-100": 0.0074
       }
     },
-    "false_positives_mean_quality": 76.87,
+    "false_positives_mean_quality": 80.29,
     "false_negatives_segment_concentration": {
       "credit_score_band": {
-        "680-739": 0.1168,
-        "740+": 0.1069,
-        "620-679": 0.0942
+        "740+": 0.1177,
+        "<620": 0.1088,
+        "680-739": 0.1073
       },
       "state": {
-        "FL": 0.125,
-        "IL": 0.112,
-        "CA": 0.1098
+        "CA": 0.1223,
+        "NY": 0.1121,
+        "FL": 0.1118
       },
       "servicer_name": {
-        "Atlas": 0.1117,
-        "Cedar": 0.1062,
-        "Beacon": 0.0902
+        "Cedar": 0.1186,
+        "Atlas": 0.1145,
+        "Beacon": 0.0979
       },
       "ltv_band": {
-        "<=60": 0.1178,
-        "61-80": 0.1014,
-        "81-100": 0.0971
+        "<=60": 0.1242,
+        "61-80": 0.11,
+        "81-100": 0.1057
       }
     },
-    "false_negatives_mean_quality": 79.79
+    "false_negatives_mean_quality": 80.93
   }
 }

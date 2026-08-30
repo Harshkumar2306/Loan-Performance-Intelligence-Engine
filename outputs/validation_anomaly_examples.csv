@@ -1,51 +1,51 @@
 loan_id,reporting_month,days_past_due,current_balance,current_status,data_quality_score,anomaly_score,anomaly_reason,next_12m_default_flag,next_3m_delinquency_flag,exception_required
-L000000,2024-09-01,0,582162.26,Prepaid,45.5,0.8635,balance_exceeds_original; prepaid_positive_balance; outlier_remaining_term_months,0.0,0.0,0.0
+L000202,2024-03-01,15,-25.0,Current,39.0,0.883,negative_balance; dpd_status_break; outlier_remaining_term_months,1.0,1.0,1.0
 L000506,2024-08-01,30,-23.92,30 DPD,49.0,0.853,negative_balance; outlier_balance_ratio; outlier_paydown_rate,0.0,0.0,1.0
 L000638,2024-11-01,120,-25.0,Default,49.6,0.8512,negative_balance; outlier_remaining_term_months; outlier_balance_ratio,,,0.0
 L000811,2024-11-01,0,-25.0,Prepaid,50.5,0.8485,negative_balance; outlier_remaining_term_months; outlier_balance_ratio,0.0,0.0,1.0
+L000000,2024-02-01,0,-25.0,Prepaid,50.5,0.8485,negative_balance; outlier_remaining_term_months; outlier_balance_ratio,0.0,0.0,1.0
 L000794,2024-10-01,0,-25.0,Prepaid,50.5,0.8485,negative_balance; outlier_remaining_term_months; outlier_balance_ratio,0.0,0.0,1.0
-L000746,2024-09-01,0,-25.0,Prepaid,50.5,0.8485,negative_balance; outlier_remaining_term_months; outlier_balance_ratio,0.0,0.0,1.0
 L000860,2024-09-01,0,-24.35,Current,50.5,0.8485,negative_balance; outlier_remaining_term_months; outlier_balance_ratio,0.0,0.0,1.0
-L000909,2024-10-01,0,-25.0,Current,51.0,0.847,negative_balance; outlier_remaining_term_months; outlier_balance_ratio,0.0,0.0,1.0
-L000212,2024-12-01,0,-25.0,Current,51.0,0.847,negative_balance; outlier_remaining_term_months; outlier_balance_ratio,0.0,0.0,1.0
+L000746,2024-09-01,0,-25.0,Prepaid,50.5,0.8485,negative_balance; outlier_remaining_term_months; outlier_balance_ratio,0.0,0.0,1.0
+L000990,2024-04-01,0,-25.0,Current,51.0,0.847,negative_balance; outlier_remaining_term_months; outlier_balance_ratio,0.0,0.0,1.0
+L000361,2024-05-01,0,-25.0,Current,51.0,0.847,negative_balance; outlier_remaining_term_months; outlier_balance_ratio,0.0,0.0,1.0
+L000871,2023-09-01,0,-25.0,Current,51.0,0.847,negative_balance; outlier_remaining_term_months; outlier_balance_ratio,0.0,0.0,1.0
 L000999,2024-11-01,0,-25.0,Current,51.0,0.847,negative_balance; outlier_remaining_term_months; outlier_balance_ratio,0.0,0.0,1.0
+L001024,2024-03-01,30,-25.0,30 DPD,51.0,0.847,negative_balance; outlier_remaining_term_months; outlier_balance_ratio,0.0,1.0,1.0
 L000620,2024-11-01,90,-25.0,90 DPD,51.0,0.847,negative_balance; outlier_remaining_term_months; outlier_balance_ratio,0.0,1.0,1.0
+L000070,2023-09-01,0,-25.0,Current,51.0,0.847,negative_balance; outlier_remaining_term_months; outlier_balance_ratio,0.0,0.0,1.0
+L000911,2023-08-01,0,-25.0,Current,51.0,0.847,negative_balance; outlier_remaining_term_months; outlier_balance_ratio,0.0,0.0,1.0
+L000212,2024-12-01,0,-25.0,Current,51.0,0.847,negative_balance; outlier_remaining_term_months; outlier_balance_ratio,0.0,0.0,1.0
+L000532,2024-06-01,0,-25.0,Current,51.0,0.847,negative_balance; outlier_remaining_term_months; outlier_balance_ratio,0.0,0.0,1.0
+L000909,2024-10-01,0,-25.0,Current,51.0,0.847,negative_balance; outlier_remaining_term_months; outlier_balance_ratio,0.0,0.0,1.0
 L001018,2024-09-01,0,-21.71,Current,51.0,0.847,negative_balance; outlier_remaining_term_months; outlier_balance_ratio,0.0,0.0,1.0
-L000163,2024-10-01,0,530604.3,Prepaid,51.5,0.8455,prepaid_positive_balance; outlier_remaining_term_months; outlier_paydown_rate,0.0,0.0,1.0
+L000740,2023-11-01,0,-25.0,Current,51.0,0.847,negative_balance; outlier_remaining_term_months; outlier_balance_ratio,0.0,0.0,0.0
 L000682,2024-12-01,0,116762.69,Prepaid,51.5,0.8455,prepaid_positive_balance; outlier_remaining_term_months; outlier_paydown_rate,0.0,0.0,1.0
+L000526,2023-10-01,0,612551.52,Prepaid,51.5,0.8455,prepaid_positive_balance; outlier_remaining_term_months; outlier_paydown_rate,0.0,0.0,1.0
+L000526,2023-11-01,0,637638.0,Prepaid,51.5,0.8455,prepaid_positive_balance; outlier_remaining_term_months; outlier_paydown_rate,0.0,0.0,1.0
+L000243,2023-10-01,0,121697.37,Prepaid,53.5,0.8395,balance_exceeds_original; prepaid_positive_balance; outlier_remaining_term_months,0.0,0.0,0.0
+L000913,2024-12-01,0,625249.7,Prepaid,53.5,0.8395,balance_exceeds_original; prepaid_positive_balance; outlier_balance_ratio,0.0,0.0,0.0
 L000725,2024-12-01,0,540171.55,Prepaid,53.5,0.8395,balance_exceeds_original; prepaid_positive_balance; outlier_balance_ratio,0.0,0.0,0.0
+L000158,2024-02-01,45,504968.51,Current,55.0,0.835,dpd_status_break; duplicate_row; outlier_remaining_term_months,0.0,1.0,0.0
+L000158,2024-02-01,45,504968.51,Current,55.0,0.835,dpd_status_break; duplicate_row; outlier_remaining_term_months,0.0,1.0,0.0
 L000692,2024-08-01,60,548434.28,60 DPD,56.0,0.832,outlier_remaining_term_months; outlier_balance_ratio; outlier_paydown_rate,0.0,0.0,1.0
+L000682,2023-08-01,0,112780.75,Current,56.0,0.832,outlier_remaining_term_months; outlier_balance_ratio; outlier_paydown_rate,0.0,0.0,1.0
+L000782,2023-07-01,120,497235.8,Default,56.6,0.8302,balance_exceeds_original; outlier_remaining_term_months; outlier_balance_ratio,,,0.0
+L000269,2024-06-01,120,-25.0,Default,57.6,0.8272,negative_balance; outlier_balance_ratio; outlier_paydown_rate,,,1.0
+L000384,2023-07-01,0,469764.54,Current,58.0,0.826,balance_exceeds_original; outlier_remaining_term_months; outlier_balance_ratio,0.0,0.0,0.0
+L000577,2023-10-01,30,378583.42,30 DPD,58.0,0.826,balance_exceeds_original; outlier_remaining_term_months; outlier_balance_ratio,0.0,0.0,0.0
+L000092,2023-08-01,0,164312.56,Current,58.0,0.826,balance_exceeds_original; outlier_remaining_term_months; outlier_balance_ratio,0.0,1.0,0.0
+L000863,2023-09-01,0,195487.63,Current,58.0,0.826,balance_exceeds_original; outlier_remaining_term_months; outlier_balance_ratio,0.0,0.0,0.0
+L000512,2023-12-01,0,701911.16,Current,58.0,0.826,balance_exceeds_original; outlier_remaining_term_months; outlier_balance_ratio,1.0,1.0,0.0
+L000546,2024-01-01,0,-25.0,Prepaid,58.5,0.8245,negative_balance; outlier_balance_ratio; outlier_paydown_rate,0.0,0.0,1.0
 L000386,2024-12-01,0,-25.0,Current,58.5,0.8245,negative_balance; outlier_balance_ratio; outlier_paydown_rate,0.0,0.0,0.0
-L000576,2024-07-01,0,-26.26,Current,58.5,0.8245,negative_balance; outlier_balance_ratio; outlier_paydown_rate,0.0,0.0,0.0
-L000218,2024-11-01,0,-25.0,Current,59.0,0.823,negative_balance; outlier_balance_ratio; outlier_paydown_rate,0.0,0.0,0.0
 L000969,2024-08-01,0,-25.0,Delinquent,59.0,0.823,negative_balance; outlier_balance_ratio; outlier_paydown_rate,0.0,0.0,1.0
-L001082,2024-09-01,0,-25.0,Current,59.0,0.823,negative_balance; outlier_balance_ratio; outlier_paydown_rate,0.0,0.0,1.0
-L001028,2024-09-01,0,-25.0,Current,59.0,0.823,negative_balance; outlier_balance_ratio; outlier_paydown_rate,0.0,0.0,1.0
+L000295,2023-07-01,0,-25.0,Current,59.0,0.823,negative_balance; outlier_balance_ratio; outlier_paydown_rate,0.0,0.0,1.0
+L000303,2024-02-01,30,-25.0,30 DPD,59.0,0.823,negative_balance; outlier_balance_ratio; outlier_paydown_rate,0.0,1.0,1.0
+L000218,2024-11-01,0,-25.0,Current,59.0,0.823,negative_balance; outlier_balance_ratio; outlier_paydown_rate,0.0,0.0,0.0
+L000051,2024-06-01,0,-25.0,Current,59.0,0.823,negative_balance; outlier_balance_ratio; outlier_paydown_rate,0.0,0.0,1.0
+L000520,2023-12-01,0,-25.0,Current,59.0,0.823,negative_balance; outlier_balance_ratio; outlier_paydown_rate,0.0,0.0,1.0
+L000914,2023-10-01,0,-25.0,Current,59.0,0.823,negative_balance; outlier_remaining_term_months; outlier_balance_ratio,0.0,0.0,1.0
+L000530,2023-11-01,0,-25.0,Current,59.0,0.823,negative_balance; outlier_balance_ratio; outlier_paydown_rate,0.0,0.0,1.0
 L000526,2024-09-01,0,637638.0,Prepaid,59.1,0.8227,prepaid_positive_balance; outlier_remaining_term_months; balance_source_conflict,0.0,0.0,1.0
-L000329,2024-11-01,0,551403.17,Prepaid,59.5,0.8215,prepaid_positive_balance; outlier_remaining_term_months; balance_source_conflict,0.0,0.0,0.0
-L000329,2024-10-01,0,551403.17,Prepaid,59.5,0.8215,prepaid_positive_balance; outlier_remaining_term_months; balance_source_conflict,0.0,0.0,1.0
-L000329,2024-09-01,0,551403.17,Prepaid,59.5,0.8215,prepaid_positive_balance; outlier_remaining_term_months; balance_source_conflict,0.0,0.0,1.0
-L000329,2024-07-01,0,551403.17,Prepaid,59.5,0.8215,prepaid_positive_balance; outlier_remaining_term_months; balance_source_conflict,0.0,0.0,1.0
-L000419,2024-09-01,0,81666.22,Prepaid,59.5,0.8215,prepaid_positive_balance; outlier_remaining_term_months; balance_source_conflict,0.0,0.0,1.0
-L000419,2024-10-01,0,81666.22,Prepaid,59.5,0.8215,prepaid_positive_balance; outlier_remaining_term_months; balance_source_conflict,0.0,0.0,1.0
-L000526,2024-08-01,0,637638.0,Prepaid,59.5,0.8215,prepaid_positive_balance; outlier_remaining_term_months; balance_source_conflict,0.0,0.0,1.0
-L000682,2024-09-01,0,125823.01,Prepaid,59.5,0.8215,prepaid_positive_balance; outlier_remaining_term_months; balance_source_conflict,0.0,0.0,1.0
-L000831,2024-12-01,0,532982.0,Prepaid,59.5,0.8215,prepaid_positive_balance; outlier_remaining_term_months; balance_source_conflict,0.0,0.0,1.0
-L000831,2024-11-01,0,532982.0,Prepaid,59.5,0.8215,prepaid_positive_balance; outlier_remaining_term_months; balance_source_conflict,0.0,0.0,0.0
-L000419,2024-11-01,0,81666.22,Prepaid,59.5,0.8215,prepaid_positive_balance; outlier_remaining_term_months; balance_source_conflict,0.0,0.0,0.0
-L000836,2024-07-01,0,533426.11,Prepaid,59.5,0.8215,prepaid_positive_balance; outlier_remaining_term_months; balance_source_conflict,0.0,0.0,1.0
-L001096,2024-12-01,0,600521.67,Prepaid,59.5,0.8215,prepaid_positive_balance; outlier_remaining_term_months; balance_source_conflict,0.0,0.0,1.0
-L001015,2024-08-01,15,416399.57,Current,60.0,0.82,dpd_status_break; outlier_remaining_term_months; balance_source_conflict,0.0,0.0,0.0
-L000946,2024-08-01,45,275743.88,Current,60.0,0.82,dpd_status_break; outlier_remaining_term_months; balance_source_conflict,0.0,0.0,1.0
-L000794,2024-12-01,0,190803.79,Prepaid,61.5,0.8155,prepaid_positive_balance; outlier_remaining_term_months; outlier_paydown_rate,0.0,0.0,0.0
-L000341,2024-12-01,0,536176.03,Prepaid,61.5,0.8155,prepaid_positive_balance; outlier_remaining_term_months; outlier_paydown_rate,0.0,0.0,0.0
-L000242,2024-11-01,0,206042.66,Prepaid,61.5,0.8155,prepaid_positive_balance; outlier_remaining_term_months; outlier_paydown_rate,0.0,0.0,0.0
-L000746,2024-10-01,0,575109.46,Prepaid,61.5,0.8155,prepaid_positive_balance; outlier_remaining_term_months; outlier_paydown_rate,0.0,0.0,0.0
-L000278,2024-12-01,0,129746.54,Prepaid,61.5,0.8155,prepaid_positive_balance; outlier_remaining_term_months; outlier_paydown_rate,0.0,0.0,0.0
-L000208,2024-07-01,0,465029.8,Prepaid,61.5,0.8155,balance_exceeds_original; prepaid_positive_balance; outlier_paydown_rate,0.0,0.0,0.0
-L000972,2024-08-01,0,154852.36,Prepaid,61.5,0.8155,prepaid_positive_balance; outlier_remaining_term_months; outlier_paydown_rate,0.0,0.0,0.0
-L000341,2024-07-01,0,558265.53,Prepaid,61.5,0.8155,prepaid_positive_balance; outlier_remaining_term_months; outlier_paydown_rate,0.0,0.0,0.0
-L000972,2024-10-01,0,167373.28,Prepaid,61.5,0.8155,prepaid_positive_balance; outlier_remaining_term_months; outlier_paydown_rate,0.0,0.0,1.0
-L000839,2024-10-01,0,245631.58,Prepaid,61.5,0.8155,prepaid_positive_balance; outlier_remaining_term_months; outlier_paydown_rate,0.0,0.0,0.0
-L000839,2024-09-01,0,227030.56,Prepaid,61.5,0.8155,prepaid_positive_balance; outlier_remaining_term_months; outlier_paydown_rate,0.0,0.0,0.0
-L000589,2024-10-01,45,444721.47,Current,62.0,0.814,dpd_status_break; outlier_remaining_term_months; outlier_paydown_rate,0.0,0.0,0.0
+L000526,2024-01-01,0,637638.0,Prepaid,59.5,0.8215,prepaid_positive_balance; outlier_remaining_term_months; balance_source_conflict,0.0,0.0,1.0

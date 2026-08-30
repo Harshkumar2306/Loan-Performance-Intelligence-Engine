@@ -1,3 +1,3 @@
 scenario,baseline_default_rate,scenario_default_rate,delta_default_pp,credit_shock_contribution_pp,prepayment_uplift_contribution_pp,baseline_prepayment_rate,scenario_prepayment_rate,delta_prepayment_pp,prepayment_uplift_applied_pp
-Adverse Credit,0.08617,0.09004,0.3863,0.3863,0.0,0.24566,0.20647,-3.9194,-1.0
-High Prepayment,0.08617,0.08617,0.0,0.0,0.0,0.24566,0.30558,5.9916,6.0
+Adverse Credit,0.0945,0.12303,2.8524,2.8524,0.0,0.26538,0.21839,-4.6984,-1.0
+High Prepayment,0.0945,0.0945,0.0,0.0,0.0,0.26538,0.32538,6.0,6.0

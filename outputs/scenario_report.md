@@ -9,50 +9,50 @@ number is auditable. Segment rows live in `scenario_report.csv`.
 
 | Scenario | Mean default | Default 5th | Default 95th | Mean prepay | Prepay 5th | Prepay 95th | Sims |
 |---|---|---|---|---|---|---|---|
-| Base | 0.08326 | 0.06368 | 0.10574 | 0.24338 | 0.21985 | 0.26954 | 30 |
-| Adverse Credit | 0.08963 | 0.07246 | 0.10841 | 0.20225 | 0.18661 | 0.22439 | 30 |
-| High Prepayment | 0.08314 | 0.06516 | 0.10564 | 0.30459 | 0.2744 | 0.33672 | 30 |
+| Base | 0.09514 | 0.08016 | 0.11004 | 0.26468 | 0.2465 | 0.28214 | 30 |
+| Adverse Credit | 0.12211 | 0.10344 | 0.13704 | 0.21373 | 0.19786 | 0.23094 | 30 |
+| High Prepayment | 0.09397 | 0.08064 | 0.1068 | 0.32602 | 0.30732 | 0.34408 | 30 |
 
 ## Driver attribution (one-feature-at-a-time counterfactuals)
 
 | Scenario | Δ default (pp) | Credit shock (pp) | Prepay-uplift effect on default (pp) | Δ prepayment (pp) | Uplift applied (pp) |
 |---|---|---|---|---|---|
-| Adverse Credit | 0.3863 | 0.3863 | 0.0 | -3.9194 | -1.0 |
-| High Prepayment | 0.0 | 0.0 | 0.0 | 5.9916 | 6.0 |
+| Adverse Credit | 2.8524 | 2.8524 | 0.0 | -4.6984 | -1.0 |
+| High Prepayment | 0.0 | 0.0 | 0.0 | 6.0 | 6.0 |
 
 ## Segment-level default-rate impacts (top 12 largest moves vs Base)
 
 | Scenario | Segment | Value | Default rate | Delinquency | Prepayment |
 |---|---|---|---|---|---|
-| Adverse Credit | credit_score_band | <620 | 0.1772 | 0.1259 | 0.1091 |
-| Adverse Credit | state | FL | 0.1119 | 0.0830 | 0.1356 |
-| Adverse Credit | state | GA | 0.0852 | 0.0773 | 0.2655 |
-| Adverse Credit | servicer_name | Atlas | 0.0903 | 0.0787 | 0.2035 |
-| Adverse Credit | state | WA | 0.0700 | 0.0736 | 0.2180 |
-| Adverse Credit | state | TX | 0.1355 | 0.0927 | 0.2182 |
-| Adverse Credit | credit_score_band | 680-739 | 0.0736 | 0.0767 | 0.1932 |
-| Adverse Credit | vintage_year | 2023 | 0.0900 | 0.0798 | 0.2065 |
-| Adverse Credit | servicer_name | Beacon | 0.0942 | 0.0753 | 0.1990 |
-| Adverse Credit | state | IL | 0.1191 | 0.0981 | 0.2068 |
-| Adverse Credit | credit_score_band | 620-679 | 0.1181 | 0.0901 | 0.1391 |
-| Adverse Credit | servicer_name | Cedar | 0.0854 | 0.0857 | 0.2173 |
+| Adverse Credit | credit_score_band | <620 | 0.3025 | 0.1205 | 0.0856 |
+| Adverse Credit | state | FL | 0.1485 | 0.0817 | 0.1541 |
+| Adverse Credit | state | GA | 0.1185 | 0.0777 | 0.2405 |
+| Adverse Credit | servicer_name | Beacon | 0.1127 | 0.0763 | 0.2030 |
+| Adverse Credit | servicer_name | Cedar | 0.1332 | 0.0853 | 0.2369 |
+| Adverse Credit | vintage_year | 2023 | 0.1230 | 0.0820 | 0.2184 |
+| Adverse Credit | state | CA | 0.1337 | 0.0899 | 0.2088 |
+| Adverse Credit | state | TX | 0.1291 | 0.0814 | 0.3050 |
+| Adverse Credit | state | IL | 0.1472 | 0.1088 | 0.1968 |
+| Adverse Credit | state | NY | 0.0970 | 0.0611 | 0.2251 |
+| Adverse Credit | servicer_name | Atlas | 0.1241 | 0.0851 | 0.2163 |
+| Adverse Credit | state | WA | 0.0869 | 0.0723 | 0.2179 |
 
 ## Segment-level prepayment-rate impacts (top 12 largest moves vs Base)
 
 | Scenario | Segment | Value | Base prepay | Scenario prepay | Δ (pp) |
 |---|---|---|---|---|---|
-| High Prepayment | credit_score_band | <620 | 0.1466 | 0.2066 | 6.00 |
-| High Prepayment | state | CA | 0.2597 | 0.3197 | 6.00 |
-| High Prepayment | state | FL | 0.1693 | 0.2293 | 6.00 |
-| High Prepayment | state | IL | 0.2394 | 0.2994 | 6.00 |
-| High Prepayment | credit_score_band | 620-679 | 0.1678 | 0.2278 | 6.00 |
-| High Prepayment | servicer_name | Beacon | 0.2394 | 0.2993 | 6.00 |
-| High Prepayment | state | NY | 0.2283 | 0.2882 | 5.99 |
-| High Prepayment | vintage_year | 2023 | 0.2457 | 0.3056 | 5.99 |
-| High Prepayment | servicer_name | Cedar | 0.2610 | 0.3210 | 5.99 |
-| High Prepayment | state | WA | 0.2672 | 0.3271 | 5.99 |
-| High Prepayment | credit_score_band | 680-739 | 0.2470 | 0.3069 | 5.99 |
-| High Prepayment | servicer_name | Atlas | 0.2365 | 0.2964 | 5.99 |
+| High Prepayment | state | NY | 0.2767 | 0.3367 | 6.00 |
+| High Prepayment | state | TX | 0.3549 | 0.4149 | 6.00 |
+| High Prepayment | servicer_name | Cedar | 0.2798 | 0.3398 | 6.00 |
+| High Prepayment | credit_score_band | <620 | 0.1204 | 0.1804 | 6.00 |
+| High Prepayment | credit_score_band | 620-679 | 0.2073 | 0.2673 | 6.00 |
+| High Prepayment | credit_score_band | 740+ | 0.3568 | 0.4168 | 6.00 |
+| High Prepayment | state | GA | 0.2911 | 0.3511 | 6.00 |
+| High Prepayment | state | IL | 0.2467 | 0.3067 | 6.00 |
+| High Prepayment | state | WA | 0.2658 | 0.3258 | 6.00 |
+| High Prepayment | servicer_name | Beacon | 0.2557 | 0.3157 | 6.00 |
+| High Prepayment | vintage_year | 2023 | 0.2654 | 0.3254 | 6.00 |
+| High Prepayment | state | CA | 0.2460 | 0.3060 | 6.00 |
 
 See `scenario_drivers.csv` for the full attribution and `scenario_mc.csv` for bootstrap bounds.
 ## Stress sensitivity by feature cluster
