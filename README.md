@@ -87,7 +87,7 @@ python3 scripts/copilot_demo.py
 ### Zero-Configuration Drop-In Testing
 The engine is built to dynamically adapt to any custom evaluation dataset supplied by judges:
 
-1. **Option A (Drop-in):** First, delete the existing demo files in the `data/` directory. Then, place your custom CSV files directly into the `data/` directory using the standard names (`loan_monthly_performance_train.csv`, `loan_monthly_performance_test.csv`, `loan_static_attributes.csv`, etc.) and run:
+1. **Option A (Drop-in):** First, delete the existing demo files in the `data/` directory. Then, place your custom files directly into the `data/` directory using the standard 8 filenames (`loan_monthly_performance_train.csv`, `loan_monthly_performance_test.csv`, `loan_static_attributes.csv`, `servicer_updates.csv`, `data_dictionary.md`, `validation_rules.json`, `macro_scenarios.csv`, `submission_template.csv`) and run:
    ```bash
    python scripts/run_pipeline.py
    ```
