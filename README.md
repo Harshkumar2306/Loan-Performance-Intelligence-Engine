@@ -41,48 +41,44 @@ Most submissions will train a simple classifier. **LPIE** builds an institutiona
 
 ## Quick Start
 
-### 1. Environment Setup
+### 1. Setup Environment
 ```bash
 # Clone or navigate to the project directory
 cd loan-performance-intelligence-engine
 
-# Create and activate a clean virtual environment
-python3 -m venv .venv
+# Activate the virtual environment
 source .venv/bin/activate
 
-# Install the engine with dev dependencies (core) plus optional extras:
-#   explain = TreeSHAP local explanations   gbm = LightGBM candidate model
-# Both degrade gracefully when absent; install them for the full-capability run.
-pip install -e '.[dev,explain,gbm]'
+# Optional: Export Groq/OpenAI keys for live LLM Copilot Features
+# If skipped, the Copilot safely falls back to offline templates.
+export OPENAI_API_KEY="your_api_key_here"
+export OPENAI_BASE_URL="https://api.groq.com/openai/v1"
 ```
 
-### Run the Full 8-Task Pipeline (1 Command)
+### 2. Generate Synthetic Data
+Creates 16,000 highly realistic, raw synthetic loan records containing realistic errors and missing values for the engine to process:
 ```bash
-# Optional: generate synthetic demo data if data/ is empty
-python scripts/make_demo_data.py --rows 16000
-
-# Execute the complete end-to-end engine
-python scripts/run_pipeline.py
+python3 scripts/make_demo_data.py --rows 16000
 ```
-> **Browser Auto-Launch:** Upon completion, the pipeline automatically opens `outputs/dashboard.html` in your default browser. To disable auto-opening (e.g., in headless CI/CD environments), pass `--no-browser`.
 
-### 3. Run Automated Tests
+### 3. Run the Safety Checks (Test Suite)
+Runs all 58 tests to mathematically prove logic, anti-leakage gates, and environment isolation are bulletproof before executing the main engine:
 ```bash
-pytest tests/ -v
+python3 -m pytest tests/ -v
 ```
-All **58 tests** pass, verifying:
-- Programmatic anti-leakage gates (`assert_no_leakage`)
-- Strict contiguous reporting-month time splitting
-- Actuarial survival curves and Aalen-Johansen identity preservation
-- Multi-horizon probability calibration and ECE
-- Deterministic 14-rule integrity logic
-- Copilot governance, retrieval citations, and audit logging
-- Edge cases: absorbing transitions, monthly-metric generation, scenario prepayment
-  impact, one-row test sets, degenerate targets, secret hygiene, and a full end-to-end
-  pipeline run producing a schema-valid `submission.csv`
 
-The unit/invariant tests run in seconds; the complete suite (including the end-to-end
-pipeline test) runs in under a minute.
+### 4. Ignite the Intelligence Engine
+Ingests the raw data, trains the multi-horizon models, simulates the stress scenarios, triggers the live AI reviewer, and generates the final Dashboard UI:
+```bash
+python3 scripts/run_pipeline.py
+```
+> **Browser Auto-Launch:** Upon completion, the pipeline automatically opens `outputs/dashboard.html` in your default browser. To disable auto-opening, pass `--no-browser`.
+
+### 5. Run the LLM Governance Demo
+Run this standalone demo to see the AI reviewer interacting live in the terminal, proving it intercepts and rejects ungrounded hallucinations:
+```bash
+python3 scripts/copilot_demo.py
+```
 
 ---
 
