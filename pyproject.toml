@@ -19,5 +19,5 @@ explain = ["shap>=0.44"]
 gbm = ["lightgbm>=4.0"]
 
 [tool.pytest.ini_options]
-pythonpath = ["src"]
+pythonpath = ["src", "."]
 testpaths = ["tests"]
