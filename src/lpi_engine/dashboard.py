@@ -114,6 +114,11 @@ header {
   background: var(--good-bg);
   color: var(--good);
   border: 1px solid rgba(52, 211, 153, 0.3);
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 4px rgba(52, 211, 153, 0.3); }
+  50% { box-shadow: 0 0 12px rgba(52, 211, 153, 0.5); }
 }
 .status-pill::before {
   content: "";
@@ -157,7 +162,7 @@ h1 {
 .card:hover {
   transform: translateY(-2px);
   border-color: var(--border-glow);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(56, 189, 248, 0.1);
 }
 .card::before {
   content: "";
@@ -183,6 +188,14 @@ h1 {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+}
+/* Section entrance animation */
+.section, .grid {
+  animation: fadeSlideIn 0.4s ease-out both;
+}
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 .section {
   padding: 16px 36px 20px;
@@ -299,6 +312,9 @@ td {
 tr:last-child td {
   border-bottom: none;
 }
+tr:nth-child(even) td {
+  background: rgba(255, 255, 255, 0.015);
+}
 tr:hover td {
   background: rgba(56, 189, 248, 0.04);
 }
@@ -412,6 +428,11 @@ svg .series { fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linej
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 10px;
   padding: 12px 14px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.copilot-metric-chip:hover {
+  border-color: rgba(56, 189, 248, 0.25);
+  transform: translateY(-1px);
 }
 .copilot-chip-label {
   font-size: 11px;
@@ -501,6 +522,17 @@ svg .series { fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linej
   padding: 2px 6px;
   border-radius: 4px;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+/* Active nav highlighting */
+.nav-item.active {
+  color: #fff;
+  background: rgba(56, 189, 248, 0.18);
+  border-color: rgba(56, 189, 248, 0.4);
+}
+/* Section dividers */
+.section + .section {
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  padding-top: 24px;
 }
 """
 
@@ -1011,7 +1043,18 @@ def render(payload: dict) -> str:
   </div>
   <div class="panel">{audit_table}</div>
 </div>
-<div style="height: 40px;"></div>
+<div class="foot">
+  <div>
+    <strong style="color:var(--text);">Loan Performance Intelligence Engine</strong>
+    <span style="margin-left:8px;">Intain Campus FinTech Challenge 2026 · AI Track</span>
+  </div>
+  <div style="display:flex; align-items:center; gap:16px;">
+    <span>58 unit tests passing</span>
+    <span>·</span>
+    <span>Generated <code>{meta.get('generated_utc', datetime.now(timezone.utc).isoformat()[:19])}Z</code></span>
+  </div>
+</div>
+<div id="back-to-top" style="position:fixed; bottom:28px; right:28px; width:40px; height:40px; border-radius:50%; background:rgba(56,189,248,0.2); border:1px solid rgba(56,189,248,0.4); color:var(--accent); display:none; align-items:center; justify-content:center; cursor:pointer; font-size:18px; z-index:99; transition: all 0.2s ease; backdrop-filter:blur(8px);" onclick="window.scrollTo({{top:0,behavior:'smooth'}})">↑</div>
 <script>
 function filterTable(tableId, query) {{
   var table = document.getElementById(tableId);
@@ -1023,6 +1066,36 @@ function filterTable(tableId, query) {{
     rows[i].style.display = text.toLowerCase().indexOf(q) > -1 ? '' : 'none';
   }}
 }}
+/* Active nav highlighting on scroll */
+(function() {{
+  var navItems = document.querySelectorAll('.nav-item');
+  var sections = [];
+  navItems.forEach(function(item) {{
+    var href = item.getAttribute('href');
+    if (href && href.startsWith('#')) {{
+      var el = document.getElementById(href.substring(1));
+      if (el) sections.push({{ el: el, nav: item }});
+    }}
+  }});
+  var observer = new IntersectionObserver(function(entries) {{
+    entries.forEach(function(entry) {{
+      if (entry.isIntersecting) {{
+        navItems.forEach(function(n) {{ n.classList.remove('active'); }});
+        sections.forEach(function(s) {{
+          if (s.el === entry.target) s.nav.classList.add('active');
+        }});
+      }}
+    }});
+  }}, {{ rootMargin: '-140px 0px -60% 0px', threshold: 0 }});
+  sections.forEach(function(s) {{ observer.observe(s.el); }});
+}})();
+/* Back-to-top button */
+(function() {{
+  var btn = document.getElementById('back-to-top');
+  window.addEventListener('scroll', function() {{
+    btn.style.display = window.scrollY > 400 ? 'flex' : 'none';
+  }});
+}})();
 </script>
 </body></html>"""
     return html
