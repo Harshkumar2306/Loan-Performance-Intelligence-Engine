@@ -145,7 +145,8 @@ def test_log_run_writes_real_timestamp(tmp_path):
 
 # ---------------------------------------------------------------- copilot honesty
 
-def test_offline_audit_never_claims_a_configured_llm_model():
+def test_offline_audit_never_claims_a_configured_llm_model(monkeypatch):
+    monkeypatch.delenv("OPENAI_API_KEY", raising=False)
     record = pd.Series({"loan_id": "L1", "days_past_due": 30, "current_balance": 100,
                         "anomaly_score": 0.8, "anomaly_reason": "dpd_status_break",
                         "next_12m_default_prob": 0.5, "data_quality_score": 60.0,

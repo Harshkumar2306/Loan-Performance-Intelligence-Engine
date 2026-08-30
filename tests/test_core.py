@@ -231,14 +231,18 @@ def test_calibration_ece_bounded_and_zero_for_perfect():
 def test_anomaly_scores_bounded_and_rule_breaches_rank_higher():
     df = _panel().copy()
     df["current_balance"] = df["current_balance"].astype(float)
+    # Inject a negative-balance row so the breached-vs-clean assertion is never skipped.
+    neg_idx = df.index[0]
+    df.loc[neg_idx, "current_balance"] = -50.0
     quality = score_test_frame(df)
     scores = anomaly_scores(df, quality, seed=42)
     assert scores.anomaly_score.between(0, 1).all()
     assert scores.anomaly_reason.notna().all()
     breached = quality[quality.negative_balance | quality.dpd_impossible].index
     clean = quality[~(quality.negative_balance | quality.dpd_impossible)].index
-    if len(breached) and len(clean):
-        assert scores.loc[breached, "anomaly_score"].mean() >= scores.loc[clean, "anomaly_score"].mean()
+    assert len(breached) > 0, "Test fixture must include at least one rule-breaching row"
+    assert len(clean) > 0, "Test fixture must include at least one clean row"
+    assert scores.loc[breached, "anomaly_score"].mean() >= scores.loc[clean, "anomaly_score"].mean()
 
 
 def test_scenario_adverse_credit_never_lowers_default_risk():
