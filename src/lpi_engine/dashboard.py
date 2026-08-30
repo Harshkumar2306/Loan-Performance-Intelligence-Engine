@@ -506,13 +506,13 @@ svg .series { fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linej
 
 
 def _svg_line_chart(data: list[dict], x_key: str, series: list[tuple[str, str, str]], height: int = 230,
-                    y_range: tuple[float, float] | None = None, dual_axis: bool = False) -> str:
+                    y_range: tuple[float, float] | None = None, dual_axis: bool = False, y_label: str = "") -> str:
     """Enhanced SVG line chart with area gradients, dual-axes, and bounded ranges."""
     if not data:
         return "<p class='meta'>no data available</p>"
     xs = [d[x_key] for d in data]
     w, h = 760, height
-    left, right, top, bottom = 54, 70 if dual_axis else 20, 18, 34
+    left, right, top, bottom = 54, 120 if not dual_axis else 70, 18, 34
     x_min, x_max = min(xs), max(xs)
     x_span = (x_max - x_min) or 1
 
@@ -527,6 +527,9 @@ def _svg_line_chart(data: list[dict], x_key: str, series: list[tuple[str, str, s
         f"<stop offset='100%' stop-color='#38bdf8' stop-opacity='0.0'/></linearGradient>",
         "</defs>"
     ]
+    
+    if y_label:
+        parts.append(f"<text x='14' y='{top + (h - top - bottom) / 2}' transform='rotate(-90, 14, {top + (h - top - bottom) / 2})' text-anchor='middle' fill='var(--muted)' font-size='11px' font-weight='500' letter-spacing='0.5px'>{y_label.upper()}</text>")
 
     if dual_axis and len(series) == 2:
         k0, l0, c0 = series[0]
@@ -564,7 +567,7 @@ def _svg_line_chart(data: list[dict], x_key: str, series: list[tuple[str, str, s
         if pts1:
             parts.append(f"<polyline class='series' stroke='{c1}' points='{' '.join(pts1)}'/>")
 
-        parts.append(f"<text x='{left}' y='{h - 10}' fill='var(--muted)'>{x_key}</text>")
+        parts.append(f"<text x='{left + (w - left - right) / 2}' y='{h - 10}' text-anchor='middle' fill='var(--muted)' font-size='11px' font-weight='600'>{x_key.upper()}</text>")
         parts.append(f"<text x='{w - 4}' y='{h - 10}' text-anchor='end' fill='{c1}'>breaches / 1k</text>")
         parts.append("</svg>")
         return "".join(parts)
@@ -591,13 +594,14 @@ def _svg_line_chart(data: list[dict], x_key: str, series: list[tuple[str, str, s
         if pts:
             parts.append(f"<polyline class='series' stroke='{colour}' points='{' '.join(pts)}'/>")
             if data and data[-1].get(k) is not None:
-                lx = px(data[-1][x_key]) - 6
-                ly = py(data[-1][k]) - 6
-                parts.append(f"<text x='{lx:.1f}' y='{ly:.1f}' text-anchor='end' fill='{colour}' font-weight='600'>{label}</text>")
+                lx = px(data[-1][x_key]) + 6
+                ly = py(data[-1][k]) + 4
+                parts.append(f"<text x='{lx:.1f}' y='{ly:.1f}' text-anchor='start' fill='{colour}' font-weight='600' font-size='11px'>{label}</text>")
 
-    parts.append(f"<text x='{left}' y='{h - 10}' fill='var(--muted)'>{x_key}</text>")
+    parts.append(f"<text x='{left + (w - left - right) / 2}' y='{h - 10}' text-anchor='middle' fill='var(--muted)' font-size='11px' font-weight='600'>{x_key.upper()}</text>")
     parts.append("</svg>")
     return "".join(parts)
+
 
 
 def _fmt(v):
@@ -923,7 +927,7 @@ def render(payload: dict) -> str:
       </div>
       {_svg_line_chart(batch, "month_ordinal",
           [("mean_quality_score", "mean quality score", "#38bdf8"),
-           ("breaches_per_1k_rows", "breaches / 1k rows", "#f87171")], dual_axis=True)}
+           ("breaches_per_1k_rows", "breaches / 1k rows", "#f87171")], dual_axis=True, y_label="Quality Score")}
       <div class="legend">
         <span style="color:#38bdf8">Mean Data-Quality Score (Left Axis)</span>
         <span style="color:#f87171">Rule Breaches Per 1,000 Rows (Right Axis)</span>
@@ -959,7 +963,7 @@ def render(payload: dict) -> str:
     {_svg_line_chart(km, "month",
         [("km_survival", "overall survival", "#94a3b8"),
          ("cif_default", "default CIF", "#f87171"),
-         ("cif_prepay", "prepayment CIF", "#38bdf8")], y_range=(0.0, 1.0))}
+         ("cif_prepay", "prepayment CIF", "#38bdf8")], y_range=(0.0, 1.0), y_label="Probability")}
     <div class="legend">
       <span style="color:#94a3b8">Kaplan-Meier Survival</span>
       <span style="color:#f87171">Default Cumulative Incidence</span>
