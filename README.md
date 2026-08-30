@@ -34,7 +34,7 @@ Most submissions will train a simple classifier. **LPIE** builds an institutiona
 | **Task 6: Operational Control Tower Dashboard** | *Req* | `src/lpi_engine/dashboard.py` | `dashboard.html` (Auto-launches; self-contained single-file HTML, zero CDN) |
 | **Task 7: Grounded LLM Reviewer Copilot** | 10 | `src/lpi_engine/copilot.py` | `reviewer_note.md`, `scripts/copilot_demo.py` |
 | **Task 8: Governance, Evaluation & Audit Trail** | 10 | `src/lpi_engine/tracking.py`<br>`src/lpi_engine/explainability.py` | `evaluation_audit` in `metrics.json`, `llm_audit_log.jsonl`, `model_card.md`, `fairness_report.csv`, `counterfactuals.csv`, `runs_log.jsonl` |
-| **ML Engineering, Testing & Reproducibility** | 5 | Modular architecture, CLI, configs | 39 passing tests in `tests/test_core.py`, versioned `config/default.yaml` |
+| **ML Engineering, Testing & Reproducibility** | 5 | Modular architecture, CLI, configs | 58 passing tests in `tests/`, versioned `config/default.yaml` |
 | **Agentic Coding Evidence** | 5 | `docs/AI_DEVELOPMENT_LOG.md` | Chronological prompts, developer verification records, accepted/rejected AI decisions |
 
 ---
@@ -68,7 +68,7 @@ python scripts/run_pipeline.py
 
 ### 3. Run Automated Tests
 ```bash
-pytest tests/test_core.py -v
+pytest tests/ -v
 ```
 All **58 tests** pass, verifying:
 - Programmatic anti-leakage gates (`assert_no_leakage`)
