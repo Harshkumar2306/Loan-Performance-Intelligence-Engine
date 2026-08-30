@@ -4,11 +4,10 @@
 > *A reproducible, institutional-grade ML control tower for loan-level data quality, multi-horizon risk modeling, competing-risk survival forecasting, anomaly intelligence, macro stress testing, and governed reviewer assistance.*
 >
 > **Author:** Harsh Kumar (`harsh_kumar@srmap.edu.in`)  
-> **Status:** 58/58 Automated Tests Passing · 100% Offline-Capable · Zero External CDN Dependencies
 
 ---
 
-## 🌟 Why This Solution Stands Out
+## Why This Solution Stands Out
 
 Most submissions will train a simple classifier. **LPIE** builds an institutional, decision-grade operational control tower:
 
@@ -23,7 +22,7 @@ Most submissions will train a simple classifier. **LPIE** builds an institutiona
 
 ---
 
-## 📋 Challenge Rubric & Task Mapping (100% Coverage)
+## Challenge Rubric & Task Mapping (100% Coverage)
 
 | Task / Assessment Criterion | Points | Key Source Modules | Primary Generated Deliverables |
 |---|:---:|---|---|
@@ -40,7 +39,7 @@ Most submissions will train a simple classifier. **LPIE** builds an institutiona
 
 ---
 
-## ⚡ Quick Start
+## Quick Start
 
 ### 1. Environment Setup
 ```bash
@@ -57,7 +56,7 @@ source .venv/bin/activate
 pip install -e '.[dev,explain,gbm]'
 ```
 
-### 2. Run the Full 8-Task Pipeline (1 Command)
+### Run the Full 8-Task Pipeline (1 Command)
 ```bash
 # Optional: generate synthetic demo data if data/ is empty
 python scripts/make_demo_data.py --rows 16000
@@ -65,7 +64,7 @@ python scripts/make_demo_data.py --rows 16000
 # Execute the complete end-to-end engine
 python scripts/run_pipeline.py
 ```
-> 🚀 **Browser Auto-Launch:** Upon completion, the pipeline automatically opens `outputs/dashboard.html` in your default browser. To disable auto-opening (e.g., in headless CI/CD environments), pass `--no-browser`.
+> **Browser Auto-Launch:** Upon completion, the pipeline automatically opens `outputs/dashboard.html` in your default browser. To disable auto-opening (e.g., in headless CI/CD environments), pass `--no-browser`.
 
 ### 3. Run Automated Tests
 ```bash
@@ -87,7 +86,7 @@ pipeline test) runs in under a minute.
 
 ---
 
-## 👨‍⚖️ Evaluator & Judge Instructions
+## Evaluator & Judge Instructions
 
 ### Zero-Configuration Drop-In Testing
 The engine is built to dynamically adapt to any custom evaluation dataset supplied by judges:
@@ -105,7 +104,7 @@ The engine is built to dynamically adapt to any custom evaluation dataset suppli
 
 ---
 
-## 🤖 LLM Copilot & Live Governance Demo
+## LLM Copilot & Live Governance Demo
 
 The engine includes a strictly governed, RAG-assisted Reviewer Copilot (`src/lpi_engine/copilot.py`).
 
@@ -131,7 +130,7 @@ python scripts/copilot_demo.py --config config/default.yaml
 
 ---
 
-## 📊 Complete Deliverables Inventory (`outputs/`)
+## Complete Deliverables Inventory (`outputs/`)
 
 | File | Description |
 |---|---|
@@ -166,7 +165,7 @@ python scripts/copilot_demo.py --config config/default.yaml
 
 ---
 
-## 🎯 Advanced Features Coverage (Brief Section 10 — All 15 Items)
+## Advanced Features Coverage (Brief Section 10 — All 15 Items)
 
 | # | Specified Capability | Concrete Implementation |
 |:---:|---|---|
@@ -188,7 +187,7 @@ python scripts/copilot_demo.py --config config/default.yaml
 
 ---
 
-## 🛡️ Anti-Leakage & Institutional Governance Architecture
+## Anti-Leakage & Institutional Governance Architecture
 
 1. **Strict Programmatic Leakage Gate:** The pipeline applies an explicit feature allow-list, scrubs all forward-looking targets (`next_*`, `exception_*`), removes loan identifiers, and executes `assert_no_leakage()` before model fitting. Any violation immediately aborts execution.
 2. **Contiguous Out-of-Time Boundary:** Data is partitioned chronologically across reporting months (default: 6-month holdout). This strictly mirrors production deployment where future performance months are unobserved.
@@ -196,7 +195,7 @@ python scripts/copilot_demo.py --config config/default.yaml
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```text
 loan-performance-intelligence-engine/
@@ -232,16 +231,3 @@ loan-performance-intelligence-engine/
 ├── pyproject.toml                 # Packaging and dependencies
 └── README.md                      # Project documentation and guide
 ```
-
----
-
-## 🏆 Summary Checklist for Submission
-
-- [x] **Complete 8-Task Rubric Coverage** with every deliverable generated.
-- [x] **Self-Contained Dashboard** (`outputs/dashboard.html`) that automatically launches in the browser.
-- [x] **58 Passing Unit, Invariant & Edge-Case Tests** in `tests/test_core.py` and `tests/test_edge_cases.py`.
-- [x] **Zero-Leakage Guarantee** strictly enforced via `assert_no_leakage`.
-- [x] **Honest Evaluation Audit** exposing panel overlap vs. loan-disjoint performance.
-- [x] **Actuarial Survival Modeling** using Aalen-Johansen competing risks.
-- [x] **Governed RAG Copilot** with live negative testing and audit logging.
-- [x] **Single Squashed Git Commit** (`Initial commit`) conforming to repository rules.
