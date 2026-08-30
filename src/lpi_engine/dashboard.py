@@ -900,10 +900,6 @@ def render(payload: dict) -> str:
 <body>
 <header>
   <div class="header-top">
-    <div style="display:flex; align-items:center; gap:12px;">
-      <span class="brand-badge">Intain 2026 • AI Track</span>
-      <span class="status-pill">Pipeline Verified</span>
-    </div>
     <div class="meta">
       <span>Cutoff: <strong>{meta.get('cutoff', 'n/a')}</strong></span>
       <span>Features: <strong>{meta.get('n_features', 'n/a')}</strong></span>

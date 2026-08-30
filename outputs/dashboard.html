@@ -497,25 +497,6 @@ svg .series { fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linej
   text-transform: uppercase;
 }
 
-.foot {
-  padding: 24px 36px 36px;
-  color: var(--dim);
-  font-size: 12px;
-  border-top: 1px solid var(--border);
-  margin-top: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-.foot code {
-  color: var(--accent);
-  background: rgba(56, 189, 248, 0.1);
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-}
 /* Active nav highlighting */
 .nav-item.active {
   color: #fff;
@@ -732,24 +713,24 @@ svg .series { fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linej
         <span style="color:var(--muted); font-size:12px;">Human verification mandatory prior to servicing action</span>
       </div>
       <div class="copilot-narrative-text"><strong>Executive Summary:</strong>
-The account is flagged for immediate review due to a critical data integrity breach where the current balance is recorded as negative, contradicting standard accounting principles for unpaid principal. While the account status indicates "Prepaid" and default probabilities are low, the high anomaly score and poor data quality necessitate manual verification before any further servicing actions.
+The account is flagged for immediate review due to a critical data integrity breach where the current balance is negative, contradicting standard loan accounting principles. While the model indicates low default risk, the low data quality score and high anomaly score suggest the underlying records are unreliable and require manual verification before any further servicing actions.
 
 <strong>Key Findings & Evidence:</strong>
-*   <strong>Negative Balance Violation:</strong> The current balance is recorded as -25.0, which directly breaches the validation rule requiring the unpaid principal to be non-negative. This suggests a potential overpayment, refund error, or data entry mistake.
-*   <strong>Anomaly Drivers:</strong> The system has identified three specific anomalies: the negative balance, an outlier in the remaining term months, and an outlier in the balance ratio. These factors collectively drive the high anomaly score of 0.8569.
-*   <strong>Status vs. Data Discrepancy:</strong> The account is marked as "Prepaid" with 0 days past due, which is consistent with a fully paid loan, but the negative balance value is not a standard representation of a prepaid status (which typically shows a zero balance or a separate credit memo).
-*   <strong>Low Model Confidence:</strong> The system's confidence in its automated assessment is moderate (0.68), reinforcing the need for human oversight rather than automated closure.
+*   <strong>Negative Balance Anomaly:</strong> The current balance is recorded as -25.0, which violates the validation rule requiring the balance to be non-negative. This suggests a potential overpayment, data entry error, or system processing glitch.
+*   <strong>Data Quality Concerns:</strong> The data quality score is 47.7, indicating significant reliability issues with the record. This low score correlates with the high anomaly score of 0.8569.
+*   <strong>Outlier Metrics:</strong> The system identified outliers in the remaining term months and balance ratio, further suggesting that the contractual or financial data may be inconsistent with the loan's lifecycle stage.
+*   <strong>Status Inconsistency:</strong> The account is marked as "Prepaid" with 0 days past due, which aligns with a negative balance (overpayment), but the magnitude and context need verification to ensure no accounting errors exist.
 
 <strong>Risk & Actuarial Context:</strong>
-*   <strong>Default Probability:</strong> The estimated probability of default within the next 12 months is low at 2.01%.
-*   <strong>Delinquency Probability:</strong> The probability of delinquency within the next 3 months is also low at 2.53%.
-*   <strong>Data Quality:</strong> The data quality score is significantly low at 47.7, indicating that the underlying records are unreliable for automated decision-making.
+*   <strong>Default Probability:</strong> The next 12-month default probability is low at 0.0201 (2.01%).
+*   <strong>Delinquency Probability:</strong> The next 3-month delinquency probability is low at 0.0253 (2.53%).
+*   <strong>Model Confidence:</strong> The model's confidence in this assessment is moderate at 0.68, likely reduced due to the poor data quality score.
+*   <strong>Actuarial Note:</strong> Low risk probabilities are likely artifacts of the "Prepaid" status and negative balance rather than a true reflection of creditworthiness, as the data integrity is compromised.
 
 <strong>Recommended Action:</strong>
-*   <strong>Escalate for Human Review:</strong> A loan officer must manually investigate the source of the negative balance.
-*   <strong>Verify Payment History:</strong> Check transaction logs to determine if a refund or overpayment was incorrectly applied to the principal balance.
-*   <strong>Correct Data Records:</strong> Once the cause is identified, correct the current balance to reflect the accurate financial position (likely 0.0 if fully prepaid) and update the remaining term months if they are indeed erroneous.
-*   <strong>Re-evaluate Anomalies:</strong> After data correction, re-run the anomaly detection to confirm that the outlier flags are resolved.</div>
+*   <strong>Escalate for Human Review:</strong> A loan officer must manually investigate the negative balance to determine if it represents a valid overpayment, a refund due, or a data error.
+*   <strong>Data Correction:</strong> Verify and correct the current balance, remaining term months, and balance ratio to ensure accurate reporting.
+*   <strong>Re-evaluation:</strong> Once data quality is restored, re-run the risk model to obtain a reliable default and delinquency probability assessment.</div>
     </div>
 
     <div class="copilot-footer">
@@ -773,19 +754,9 @@ The account is flagged for immediate review due to a critical data integrity bre
     <h2>Task 8 • Governance &amp; Copilot Audit Trail</h2>
     <span class="section-desc">Copilot audit trail with real-time prompt/decision logging and demonstrated hallucination rejection</span>
   </div>
-  <div class="panel"><table><thead><tr><th>Timestamp (UTC)</th><th>Model</th><th>Decision Status</th></tr></thead><tbody><tr><td class='mono'>2026-08-30T18:57:26.670155+00:00</td><td><strong>qwen/qwen3.8-27b</strong></td><td><span class='pill pill-good'>● Pending Human Review</span></td></tr><tr><td class='mono'>2026-08-30T18:57:27.186943+00:00</td><td><strong>qwen/qwen3.8-27b</strong></td><td><span class='pill pill-bad'>● Policy Rejection (Ungrounded)</span></td></tr></tbody></table></div>
+  <div class="panel"><table><thead><tr><th>Timestamp (UTC)</th><th>Model</th><th>Decision Status</th></tr></thead><tbody><tr><td class='mono'>2026-08-30T19:01:42.257707+00:00</td><td><strong>qwen/qwen3.8-27b</strong></td><td><span class='pill pill-good'>● Pending Human Review</span></td></tr><tr><td class='mono'>2026-08-30T19:01:42.713853+00:00</td><td><strong>qwen/qwen3.8-27b</strong></td><td><span class='pill pill-bad'>● Policy Rejection (Ungrounded)</span></td></tr></tbody></table></div>
 </div>
-<div class="foot">
-  <div>
-    <strong style="color:var(--text);">Loan Performance Intelligence Engine</strong>
-    <span style="margin-left:8px;">Intain Campus FinTech Challenge 2026 · AI Track</span>
-  </div>
-  <div style="display:flex; align-items:center; gap:16px;">
-    <span>58 unit tests passing</span>
-    <span>·</span>
-    <span>Generated <code>2026-08-30T18:57:27.231616+00:00Z</code></span>
-  </div>
-</div>
+<div style="height: 40px;"></div>
 <div id="back-to-top" style="position:fixed; bottom:28px; right:28px; width:40px; height:40px; border-radius:50%; background:rgba(56,189,248,0.2); border:1px solid rgba(56,189,248,0.4); color:var(--accent); display:none; align-items:center; justify-content:center; cursor:pointer; font-size:18px; z-index:99; transition: all 0.2s ease; backdrop-filter:blur(8px);" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
 <script>
 function filterTable(tableId, query) {
