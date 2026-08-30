@@ -358,7 +358,9 @@ def yaml_safe_dump(obj):
     return yaml.safe_dump(obj)
 
 
-def test_end_to_end_pipeline_produces_valid_submission(tmp_path):
+def test_end_to_end_pipeline_produces_valid_submission(tmp_path, monkeypatch):
+    monkeypatch.delenv("OPENAI_API_KEY", raising=False)
+    monkeypatch.delenv("OPENAI_BASE_URL", raising=False)
     from scripts.run_pipeline import main as pipeline_main
     data_dir = _write_tiny_pack(tmp_path)
     out_dir = tmp_path / "out"
