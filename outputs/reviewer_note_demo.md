@@ -1,1 +1,10 @@
-RECOMMENDATION ONLY — human review required. Loan L000747 presents a significant risk profile with a current balance of $214,000 and a status of 90 days past due, which is consistent with the validation rule that positive days past due implies a delinquent status. The model indicates a 31% probability of default within the next 12 months and a 67% probability of delinquency within the next 3 months, with days past due identified as the primary driver of this assessment. An anomaly score of 0.71, attributed to a delinquency status break, suggests unusual behavior in the payment history, while a data quality score of 61.0 and a model confidence level of 62% indicate moderate uncertainty in the underlying data and predictions. Given the high delinquency stage and associated probabilities, this loan warrants careful scrutiny, though the moderate confidence and data quality scores suggest that the findings should be interpreted with caution and verified through manual review.
+RECOMMENDATION ONLY — human review required. Loan L000747 was prioritised because: dpd_status_break. Projected 12-month default probability=0.31; data-quality score=61.0; model confidence=0.62. Verify the source records, status and supporting documents before deciding whether to reconcile, monitor or escalate.
+
+Field definitions cited:
+- `loan_id`: unique loan identifier.
+- `days_past_due`: days past due at the reporting month.
+- `current_balance`: unpaid principal at the reporting month.
+- `current_status`: performing status or delinquency stage.
+
+Applicable validation rules:
+- days_past_due > 0 implies a delinquent status
