@@ -1,5 +1,3 @@
-import warnings
-warnings.filterwarnings("ignore")
 
 """End-to-end reproducible pipeline: ingest -> profile -> split -> train -> explain -> simulate -> submit.
 
@@ -8,6 +6,9 @@ Every artefact is written to `outputs/`. Metrics are only ever computed on the
 contiguous out-of-time validation period, never on training data.
 """
 from __future__ import annotations
+import warnings
+warnings.filterwarnings("ignore")
+
 
 import argparse
 import json
