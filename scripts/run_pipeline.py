@@ -1,3 +1,6 @@
+import warnings
+warnings.filterwarnings("ignore")
+
 """End-to-end reproducible pipeline: ingest -> profile -> split -> train -> explain -> simulate -> submit.
 
 Run:  python scripts/run_pipeline.py --config config/default.yaml
